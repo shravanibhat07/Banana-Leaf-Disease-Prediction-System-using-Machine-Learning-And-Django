@@ -26,7 +26,14 @@ Machine Learning based Banana Leaf Disease Prediction System developed using Dja
 
 ## Result
 
-Random Forest achieved the highest accuracy of 99.57%.
+Random Forest achieved the highest accuracy of 55-65%.
+## Screenshots
+
+### Input Page
+![Input Page](input_new.png)
+
+### Prediction Output
+![Output Page](output_new.png)
 
 ## Future Improvements
 
