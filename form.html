@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Banana Leaf Disease Prediction</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+        }
+
+        .container {
+            width: 420px;
+            margin: 60px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            text-align: center;
+            color: #1e3d59;
+            margin-bottom: 25px;
+            font-weight: 600;
+            border-bottom: 3px solid #28a745;
+            padding-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        input:focus, select:focus {
+            border-color: #28a745;
+            outline: none;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Banana Leaf Disease Prediction</h2>
+
+    <form method="POST" action="/predict/">
+        {% csrf_token %}
+
+        <label>Leaf Length</label>
+        <input name="length" placeholder="Enter length (cm)" required>
+
+        <label>Leaf Width</label>
+        <input name="width" placeholder="Enter width (cm)" required>
+
+        <label>Color</label>
+        <select name="color" required>
+            <option>Light</option>
+            <option>Medium</option>
+            <option>Dark</option>
+        </select>
+
+        <label>Spots Present</label>
+        <select name="spots" required>
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+
+        <label>Moisture (%)</label>
+        <input name="moisture" placeholder="Enter moisture %" required>
+
+        <label>Texture</label>
+        <select name="texture" required>
+            <option>Smooth</option>
+            <option>Rough</option>
+        </select>
+
+        <label>Humidity (%)</label>
+        <input name="humidity" placeholder="Enter humidity %" required>
+
+        <label>Temperature (°C)</label>
+        <input name="temp" placeholder="Enter temperature" required>
+
+        <label>Soil Type</label>
+        <select name="soil" required>
+            <option>Clay</option>
+            <option>Sandy</option>
+            <option>Loamy</option>
+        </select>
+
+        <button type="submit">Predict</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
